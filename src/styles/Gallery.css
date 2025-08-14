@@ -1,0 +1,185 @@
+.gallery-container {
+  text-align: center;
+  padding: 0 0 4rem 0;
+  background-color: #062C21;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-heading {
+  font-family: "Rubik Marker Hatch", system-ui;
+  font-weight: 400;
+  color: #aedb9f; /* White text for contrast */
+  background-color: #062C21; 
+  padding: 1%;
+  margin: 0;
+  width: 100vw; /* Full viewport width */
+  margin-bottom: 2rem;
+  margin-top: 100px;
+  font-size: 45px;
+}
+
+/* Carousel */
+.gallery-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-carousel-track {
+  display: flex;
+  gap: 2vw;
+  min-width: 200%;
+}
+
+.rfm-child{
+  margin: 1rem;
+}
+
+.gallery-carousel-track.paused {
+  animation-play-state: paused;
+}
+
+/* Dynamic animation */
+@keyframes gallery-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 10vw)); /* Adjust dynamically based on viewport width */
+  }
+}
+
+.gallery-carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  max-width: 250px;
+  cursor: pointer;
+}
+
+.gallery-carousel-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Timeline Line */
+.gallery-timeline-line {
+  width: 2px;
+  height: 10vh; /* Adjust height to match spacing */
+  background-color: black;
+  margin: 10px 0;
+}
+
+/* Image */
+.gallery-carousel-image {
+  width: 100%;
+  max-width: 250px;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.gallery-carousel-item:hover .gallery-carousel-image,
+.gallery-carousel-item:active .gallery-carousel-image {
+  transform: scale(1.05);
+}
+
+/* Caption & Date */
+.gallery-carousel-caption {
+  margin-top: 10px;
+  color: yellow;
+  font-weight: bold;
+  text-align: center;
+}
+
+.gallery-carousel-date {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Modal */
+.gallery-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.gallery-modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1001;
+  width: auto; /* Take up most of the screen width */
+  max-width: 700px; /* Prevent excessive width */
+  max-height: 85vh; /* Prevent excessive height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+.gallery-modal-image {
+  width: 100%; /* Ensure image stays inside modal */
+  max-height: 60vh; /* Prevent image from taking full height */
+  object-fit: contain; /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+.gallery-modal-caption, .gallery-modal-date {
+  width: 100%; /* Ensure text doesn’t overflow */
+  padding: 10px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.gallery-modal-date{
+  padding-top: 0;
+}
+
+.gallery-modal-caption{
+  padding-bottom: 0;
+}
+
+.gallery-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+}
+
+/* Make modal fullscreen on very small screens */
+@media (max-width: 600px) {
+  .gallery-modal-content {
+    width: 80vw;
+    max-height: 90vh;
+    padding: 5px;
+  }
+
+  .gallery-modal-image {
+    max-width: 100%;
+    max-height: 85vh;
+  }
+}

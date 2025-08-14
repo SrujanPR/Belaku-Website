@@ -1,0 +1,151 @@
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  z-index: 50;
+  height: 80px; /* Adjusted height for better responsiveness */
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar Container */
+.navbar .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo Styling */
+.navbar .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.logo{
+  color: black;
+}
+
+.logo-img {
+  height: 70px;
+  width: auto;
+}
+
+.logo-img-belaku {
+  height: 70px;
+  width: auto;
+}
+
+/* Mobile Menu Icon on the Left */
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+/* Desktop Navigation */
+.navbar .desktop-nav {
+  display: flex;
+  gap: 1.5rem;
+  /* font-size: 1rem; */
+  font-weight: 500;
+  align-items: center;
+}
+
+.navbar .desktop-nav li {
+  list-style: none;
+  cursor: pointer;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.navbar .desktop-nav li:hover, .navbar .desktop-nav li:active {
+  color: #ffda1b;
+}
+
+#nav-dropdown li:hover a {
+  color: #ffda1b !important;
+  transition: color 0.3s ease;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  min-width: 200px;
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu { 
+    display: flex;
+}
+
+
+.dropdown-menu li {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .scroll-link{
+    padding: 0;
+  }
+
+  .navbar .desktop-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+
+  .navbar .desktop-nav.mobile-nav-active {
+    display: flex;
+  }
+
+  .navbar .desktop-nav li {
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Adjusting logo position */
+  .navbar .logo-container {
+    margin-left: auto;
+  }
+}

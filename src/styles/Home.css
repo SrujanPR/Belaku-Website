@@ -1,0 +1,98 @@
+.home {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: auto; /* Will adapt to image height */
+  background-color: #062C21;
+  margin-top: 80px;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 100%; /* Let it adapt dynamically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 70vh; /* Set a fixed height for consistency */
+  max-height: 700px; /* Avoid excessive stretching */
+  object-fit: cover; /* Ensures all images fill the space without distortion */
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .carousel-image {
+    height: 50vh;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-image {
+    height: 50vh;
+    max-height: 350px;
+  }
+}
+
+.volunteer-btn-container {
+  position: absolute;
+  bottom: 10%; /* Always 10% from the bottom of the image */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+
+.scroll{
+  cursor: pointer;
+  color: black; /* Default color */
+  font-weight: normal;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+.volunteer-btn {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.volunteer-btn:hover, .volunteer-btn:active {
+  background: #d8b400;
+}
+
+.volunteer-btn {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  /* font-size: 1rem; */
+  width: 25vw;
+  min-width: max-content;
+  background: #ffda1b;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+@media (max-width: 768px) {
+  .carousel-image {
+    height: 50vh;
+    max-height: 350px;
+  }
+
+  .carousel-image {
+    width: 100%;
+    object-fit: cover; /* Keeps aspect ratio */
+  }
+  
+  .volunteer-btn{
+    padding: 0.5rem 1rem;
+  }
+}

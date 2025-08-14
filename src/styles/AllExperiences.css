@@ -1,0 +1,194 @@
+/* Experiences Section */
+
+.all-experiences-section {
+  text-align: center;
+  padding: 0 0 2rem 0;
+  background-color: #2d2d2d;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.all-experience-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  height: 10vh;
+  padding: 1rem;
+  margin-top: 80px;
+  color: #94dbf2;
+}
+
+.all-experience-heading {
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.headingAndCards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.view-all,
+.back-button {
+  display: block;
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding: 0.75rem 1rem;
+  width: max-content;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 2rem;
+  text-decoration: none;
+}
+
+.view-all:hover,
+.back-button:hover {
+  background-color: #94dbf2;
+  color: azure;
+}
+
+/* Experience Cards Grid */
+
+/* Experience Cards Grid */
+.all-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 2rem;
+  justify-content: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the grid */
+  place-items: center; /* Ensures content is centered */
+}
+
+
+/* Individual Card */
+.all-experience-card {
+  background: white;
+  border-radius: 12px;
+  text-align: left;
+  width: 100%;
+  height: 500px;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.all-experience-card:hover {
+  transform: scale(1.05);
+}
+
+/* Image */
+.volunteer-image-full {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+/* Experience Content */
+.all-experience-content {
+  height: 50%;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Name, Age, and Year Container */
+.all-experience-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+/* Year */
+.year {
+  color: rgb(100, 100, 100);
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Experience Text */
+.all-experience-text {
+  line-height: 1.3;
+  max-height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-style: italic;
+}
+
+/* Read More Link */
+.read-more {
+  color: #43c3ed;
+  cursor: pointer;
+  text-decoration: underline;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.read-more:hover {
+  text-decoration: none;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .all-experience-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .all-experience-header {
+    height: auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .all-experience-grid {
+    gap: 1.5rem;
+  }
+
+  .all-experience-card {
+    max-width: 90%;
+    min-height: 450px;
+  }
+
+  .all-experience-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .all-experience-heading {
+    padding: 0 1rem;
+  }
+
+  .all-experience-card {
+    max-width: 95%;
+    height: 420px;
+  }
+
+  .read-more {
+    bottom: 5px;
+    right: 5px;
+  }
+}

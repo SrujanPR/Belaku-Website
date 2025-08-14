@@ -1,0 +1,194 @@
+.video-section {
+    text-align: center;
+    padding: 0 0 2rem 0;
+    background-color: #062C21;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.watch-text {
+    font-family: "Rubik Marker Hatch", system-ui;
+    font-weight: 400;
+    font-size: 45px;
+    position: center;
+    right: 20%;
+    text-align: center;
+    margin-top: 100px;
+    color: white;
+}
+
+.arrow-image {
+    display: block;
+    margin: 0 auto 10px auto;
+    width: 10vw;
+    /* Adjust size */
+}
+
+.video-item {
+    width: 100%;
+    height: 50vh;
+    border-radius: 1%;
+}
+
+video {
+    width: 80vw;
+    height: auto;
+
+}
+
+.carousel-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff3b6d;
+    z-index: 1;
+}
+
+.carousel-btn.left {
+    left: 10px;
+}
+
+.carousel-btn.right {
+    right: 10px;
+}
+
+.video-title-overlay {
+    position: absolute;
+    top: -40px;
+    /* Move it above the video */
+    left: 0;
+    /* Align to the left */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.video-carousel-container {
+    position: relative;
+    /* Allows absolute positioning for .video-title-overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align items to the left */
+    cursor: pointer;
+}
+
+.video-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.video-carousel-container:hover .video-title-overlay {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+
+    /* Adjust video size */
+    .video-item {
+        width: 50vw;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .watch-text {
+        right: 10%;
+        text-align: center;
+        margin-top: 20px;
+        color: #ffffff;
+    }
+
+    /* Reduce arrow size and position */
+    .carousel-btn {
+        font-size: 1.5rem;
+        top: 50%;
+    }
+
+    /* Ensure buttons are not too close */
+    .carousel-btn.left {
+        left: 5px;
+    }
+
+    .carousel-btn.right {
+        right: 5px;
+    }
+
+    /* Video title overlay - centered */
+    .video-title-overlay {
+        top: -30px;
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Adjust video size */
+    .video-item {
+        height: auto;
+        border-radius: 5px;
+    }
+
+    /* Reduce arrow size and position */
+    .carousel-btn {
+        font-size: 1.5rem;
+        top: 50%;
+    }
+
+    /* Ensure buttons are not too close */
+    .carousel-btn.left {
+        left: 5px;
+    }
+
+    .carousel-btn.right {
+        right: 5px;
+    }
+
+    /* Video title overlay - centered */
+    .video-title-overlay {
+        top: -30px;
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}
+
+/* Even smaller screens (Phones) */
+@media (max-width: 480px) {
+
+    /* Reduce video width further */
+    .video-item {
+        width: 95vw;
+    }
+
+    /* Reduce button size */
+    .carousel-btn {
+        font-size: 1.2rem;
+    }
+
+    /* Adjust the "Watch Text" placement */
+    .watch-text {
+        right: 0;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* Resize arrow image */
+    .arrow-image {
+        width: 15vw;
+        position: relative;
+        left: 100px;
+    }
+}

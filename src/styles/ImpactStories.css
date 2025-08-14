@@ -1,0 +1,230 @@
+/* Impact Stories Section */
+.impact-section {
+    text-align: center;
+    padding: 0;
+    background-color: #062C21;
+    width: 100vw;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Heading */
+.impact-heading {
+    margin: 0;
+    font-family: "Rubik Marker Hatch", system-ui;
+    font-weight: 400;
+    padding: 1rem;
+    color: #FFAFBC;
+    background-color: #062C21;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 100px;
+    font-size: 45px;
+}
+
+.impact-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.impact-body p {
+    color: white;
+}
+
+/* Bento Grid Layout */
+.impact-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(80px, 1fr)); /* Scales down proportionally */
+    gap: 0.5rem;
+    margin: 0 auto;
+    padding: 0;
+    margin-bottom: 1rem;
+    width: 90vw;
+}
+
+/* Bento Item Base */
+.impact-bento-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover Effect */
+.impact-bento-item:hover, .impact-bento-item:active {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Default Desktop Bento Layout */
+.impact-bento-item:nth-child(1) {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.impact-bento-item:nth-child(2){
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.impact-bento-item:nth-child(3) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.impact-bento-item:nth-child(4){
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.impact-bento-item:nth-child(5) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.impact-bento-item:nth-child(6) {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+/* Responsive Layout Adjustments */
+@media (min-width: 1024px) {
+    .impact-bento-grid {
+        grid-template-columns: repeat(3, minmax(60px, 1fr)); /* Smaller grid */
+        gap: 0.3rem;
+    }
+
+    .impact-bento-item {
+        padding: 0.8rem;
+    }
+
+    .student-image {
+        height: 25vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    .impact-bento-grid {
+        grid-template-columns: repeat(3, minmax(60px, 1fr)); /* Smaller grid */
+        gap: 0.3rem;
+    }
+
+    .impact-bento-item {
+        padding: 0.8rem;
+    }
+
+    .student-image {
+        height: 25vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .impact-bento-grid {
+        grid-template-columns: repeat(3, minmax(50px, 1fr)); /* Keeps Bento intact */
+    }
+
+    .student-image {
+        height: 20vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .impact-bento-grid {
+        grid-template-columns: repeat(3, minmax(40px, 1fr)); /* Further shrinking */
+    }
+
+    .impact-bento-item {
+        padding: 0.5rem;
+    }
+
+    .student-image {
+        height: 15vh;
+    }
+}
+
+/* Modal Styles */
+.expanded-story-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 70vh;
+    max-width: 80vw;
+    min-width: 30vw;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1001;
+    overflow-y: scroll;
+}
+
+/* Show Modal */
+.expanded-story-modal.show {
+    display: flex;
+}
+
+/* Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+/* Show Overlay */
+.modal-overlay.show {
+    display: block;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Modal Image */
+.expanded-image-impact {
+    width: auto;
+    height: 25vh;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+    .expanded-story-modal {
+        width: 80vw;
+    }
+}
+
+.expanded-content {
+    scroll-behavior: smooth;
+    white-space: pre-line;
+}
