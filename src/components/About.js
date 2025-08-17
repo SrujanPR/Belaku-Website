@@ -12,7 +12,10 @@ const About = () => {
       <div className="about-wrapper">
         {/* LEFT COLUMN */}
         <div className="about-left">
-          <div className="about-image-placeholder" />
+          <img 
+            src="\assets\About\about.png"  // <-- path to your image
+            alt="Belaku Learning Center"
+            className="about-image"/>
           <div className="stats-container">
             <div className="stat">
               <h3>{inView && <CountUp start={0} end={aboutData["Number of Volunteers"]} duration={2} />}+</h3>
