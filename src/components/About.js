@@ -13,7 +13,7 @@ const About = () => {
         {/* LEFT COLUMN */}
         <div className="about-left">
           <img 
-            src="\assets\About\about.png"  // <-- path to your image
+            src="\assets\about.jpeg"  // <-- path to your image
             alt="Belaku Learning Center"
             className="about-image"/>
           <div className="stats-container">
