@@ -31,7 +31,7 @@ const Navbar = () => {
         <div className="logo-container" onClick={() => handleNavigation("home")} style={{ cursor: "pointer"}}>
           <img src="/assets/Navbar/uandi_logo.png" className="logo-img" alt="U&I Logo" />
           <div className="logo">x</div>
-          <img id="BelakuLogo" className="logo-img-belaku" src="/assets/Navbar/Belaku.png" alt="Belaku Logo" />
+          <img id="BelakuLogo" className="logo-img-belaku" src="/assets/Navbar/Belaku Logo.png" alt="Belaku Logo" />
         </div>
 
         {/* Desktop Navigation */}
